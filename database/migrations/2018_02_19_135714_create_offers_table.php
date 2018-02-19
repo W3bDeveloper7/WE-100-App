@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateHealthyTipsTable extends Migration
+class CreateOffersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,12 @@ class CreateHealthyTipsTable extends Migration
      */
     public function up()
     {
-        Schema::create('healthy_tips', function (Blueprint $table) {
+        Schema::create('offers', function (Blueprint $table) {
             $table->increments('id');
             $table->string('title');
-            $table->text('body');
+            $table->string('location');
+            $table->string('body');
+            $table->integer('is_active')->nullable()->index()->default('0');
             $table->timestamps();
         });
     }
@@ -28,6 +30,6 @@ class CreateHealthyTipsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('healthy_tips');
+        Schema::dropIfExists('offers');
     }
 }

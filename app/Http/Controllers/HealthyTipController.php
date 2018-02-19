@@ -44,7 +44,7 @@ class HealthyTipController extends Controller
         $tip = healthyTip::create($request->all());
         OneSignal::sendNotificationCustom([
                 'contents' => [
-                    'en' => str_limit($request->content, 50),
+                    'en' => str_limit($request->body, 50),
                 ],
                 'headings' => [ 'en' => $request->title ],
                 'data' => ['type'=>'healthyTips'],
@@ -102,7 +102,11 @@ class HealthyTipController extends Controller
     public function destroy($healthyTip)
     {
         //
-        healthyTip::whereId($healthyTip)->delete();
+        $healthyTip = healthyTip::find($healthyTip);
+
+        $healthyTip->notifications()->delete();
+        $healthyTip->delete();
+
 
         return redirect('admin/healthyTips');
     }

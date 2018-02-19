@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="WE100App - A fully restful API, laravel based admin">
-    <title>WE 100 App | Login Page</title>
+    <title>WE 100 App | Register Page</title>
     <!-- Site favicon -->
     <link rel='shortcut icon' type='image/x-icon' href='{{URL::asset('images/fav.ico')}}' />
     <!-- /site favicon -->

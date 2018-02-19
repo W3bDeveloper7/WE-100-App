@@ -43,7 +43,7 @@ class HealthyTipController extends ApiController
 
         OneSignal::sendNotificationCustom([
             'contents' => [
-                'en' => str_limit($request->content, 50),
+                'en' => str_limit($request->body, 50),
             ],
             'headings' => [ 'en' => $request->title ],
             'data' => ['type'=>'healthyTips'],

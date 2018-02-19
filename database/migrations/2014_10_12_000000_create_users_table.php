@@ -19,7 +19,7 @@ class CreateUsersTable extends Migration
             $table->string('username')->unique();
             $table->string('email')->unique();
             $table->string('password');
-            $table->tinyInteger('gender')->unsigned()->index();
+            $table->tinyInteger('gender')->unsigned()->index()->default('0');
             $table->string('height')->nullable();
             $table->string('weight')->nullable();
             $table->string('bmi')->nullable();

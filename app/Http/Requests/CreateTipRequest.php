@@ -26,7 +26,7 @@ class CreateTipRequest extends FormRequest
         return [
             //
             'title'=>'required|min:10',
-            'content'=>'required'
+            'body'=>'required'
         ];
     }
 }

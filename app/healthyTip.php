@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class healthyTip extends Model
 {
     //
-    protected $fillable = [ 'title', 'content', ];
+    protected $fillable = [ 'title', 'body', ];
 
     public function notifications(){
 
