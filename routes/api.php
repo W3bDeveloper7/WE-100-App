@@ -16,3 +16,8 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+
+Route::resource('/v1/healthyTips', 'api\HealthyTipController', ['only' => ['index', 'show', 'store', 'destroy']]);
+
+Route::resource('/v1/notifications', 'api\NotificationController', ['only' => ['index', 'show']]);
