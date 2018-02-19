@@ -25,8 +25,9 @@ class CreateUsersTable extends Migration
             $table->string('bmi')->nullable();
             $table->string('country')->nullable()->index();
             $table->rememberToken();
-            $table->string('verified')->default(User::UNVERIFIED_USER);
+            $table->integer('verified')->default(User::UNVERIFIED_USER);
             $table->string('verification_token')->nullable();
+            $table->integer('active')->default(User::UNVERIFIED_USER);
             $table->string('admin')->default(User::REGULAR_USER);
             $table->timestamps();
         });
