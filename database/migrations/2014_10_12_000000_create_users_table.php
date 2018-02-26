@@ -24,6 +24,7 @@ class CreateUsersTable extends Migration
             $table->string('weight')->nullable();
             $table->string('bmi')->nullable();
             $table->string('country')->nullable()->index();
+            $table->integer('program_id')->unsigned()->index();
             $table->rememberToken();
             $table->integer('verified')->default(User::UNVERIFIED_USER);
             $table->string('verification_token')->nullable();
