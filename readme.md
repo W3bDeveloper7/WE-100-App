@@ -3,7 +3,7 @@
 <h3> USER Module </h3>
 <b>End Points</b>
 <br/>
-link : <a href="#"> https://we100.we-champions.com/api/v1/register </a> &nbsp; |  method: <b>POST</b> <br><br>
+1 - link : <a href="#"> https://we100.we-champions.com/api/v1/register </a> &nbsp; |  method: <b>POST</b> <br><br>
 data : [{<br/>
              'name' => $request->name,<br/>
             'username' => $request->username,<br/>
