@@ -3,7 +3,7 @@
 <h3> USER Module </h3>
 <b>End Points</b>
 <br/>
-link : <a href="#"> https://we100.we-champions.com/api/v1/register </a> &nbsp; |  method: <b>POST</b> <br/>
+link : <a href="#"> https://we100.we-champions.com/api/v1/register </a> &nbsp; |  method: <b>POST</b> <br><br>
 data : [{<br/>
              'name' => $request->name,<br/>
             'username' => $request->username,<br/>
@@ -20,3 +20,9 @@ response : [{<br/>
   'data': 'registration success',<br>
   'state' : 1 
 <br/>}]
+
+Validation: <br><br>
+            'name' => 'required|string|max:255',<br>
+            'username' => 'required|string|max:255|unique:users',<br>
+            'email' => 'required|string|email|max:255|regex:/(.*)@merckgroup\.com/i|unique',<br>
+            'password' => 'required|string|min:6|confirmed',<br>
